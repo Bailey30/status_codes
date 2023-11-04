@@ -1,10 +1,17 @@
+export class StatusError extends RangeError {
+    constructor(id: string) {
+        super();
+        this.message = `No codes found for ${id}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`;
+    }
+}
+
 export enum Operation {
     printAll,
     PrintGroup,
     PrintOne,
 }
 
-export function handleArgs(args?: string[]) {
+export function validateArgs(args?: string[]): void {
     if (!args) {
         return;
     }
@@ -12,13 +19,11 @@ export function handleArgs(args?: string[]) {
         throw new Error("too many arguments");
     }
     if ((args.length === 1 && args[0].length > 3) || args[0].length === 2) {
-        throw new Error(
-            `No codes found for ${args[0]}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`
-        );
+        throw new StatusError(args[0]);
     }
 }
 
-export function getConfig(args: string[]): Operation {
+export function getOperation(args: string[]): Operation {
     if (!args || args[0] === undefined) {
         return Operation.printAll;
     } else if (args && args[0].length === 3) {

@@ -49,11 +49,11 @@ test("should get specific grouop", () => {
     expect(just100).toEqual(expected);
 });
 test("should return correct Operation", () => {
-    const operation = (0, config_1.getConfig)([]);
+    const operation = (0, config_1.getOperation)([]);
     expect(operation).toEqual(config_1.Operation.printAll);
-    const operation2 = (0, config_1.getConfig)(["1"]);
+    const operation2 = (0, config_1.getOperation)(["1"]);
     expect(operation2).toEqual(config_1.Operation.PrintGroup);
-    const operation3 = (0, config_1.getConfig)(["100"]);
+    const operation3 = (0, config_1.getOperation)(["100"]);
     expect(operation3).toEqual(config_1.Operation.PrintOne);
 });
 test("should return one", () => {

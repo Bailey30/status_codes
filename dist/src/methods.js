@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.logOne = exports.logResults = exports.selectOne = exports.selectGroup = exports.getAllCodes = void 0;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
+const config_1 = require("./config");
 function getAllCodes() {
     const file_contents = fs_1.default.readFileSync(path_1.default.join(__dirname, "../status_codes.json"), "utf8");
     return JSON.parse(file_contents.toString());
@@ -24,7 +25,7 @@ function selectGroup(id = "all", allCodes) {
         }
     });
     if (groups.length === 0) {
-        throw new Error(`No codes found for ${id}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`);
+        throw new config_1.StatusError(id);
     }
     return groups;
 }
@@ -39,7 +40,7 @@ function selectOne(id, allCodes) {
         };
     }
     catch (error) {
-        throw new Error(`No codes found for ${id}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`);
+        throw new config_1.StatusError(id);
     }
 }
 exports.selectOne = selectOne;

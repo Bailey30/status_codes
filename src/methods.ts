@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { StatusCodes, Group, Status_Code, CodesWithInfo } from "./types";
+import { StatusError } from "./config";
 
 export function getAllCodes(): StatusCodes {
     const file_contents = fs.readFileSync(
@@ -16,6 +17,7 @@ export function selectGroup(
     allCodes: StatusCodes
 ): Group[] {
     const groups: any = [];
+
     Object.entries(allCodes).forEach(
         ([key, value]: [string, CodesWithInfo]) => {
             // key[0] is the first character
@@ -30,9 +32,7 @@ export function selectGroup(
     );
 
     if (groups.length === 0) {
-        throw new Error(
-            `No codes found for ${id}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`
-        );
+        throw new StatusError(id);
     }
 
     return groups;
@@ -47,9 +47,7 @@ export function selectOne(id: string, allCodes: StatusCodes): Status_Code {
             details: group[0].codes[id].details,
         };
     } catch (error) {
-        throw new Error(
-            `No codes found for ${id}. Enter in format '1xx' for specific codes or the numbers 1-5 to receive the corresponding group.`
-        );
+        throw new StatusError(id);
     }
 }
 
@@ -62,6 +60,7 @@ const lightBlue = "\x1b[94m";
 export function logResults(groups: Group[]): void {
     groups.forEach((group: Group) => {
         const codeNumbers = Object.keys(group.codes);
+
         console.log(`${underlined}${group.name}${reset}\n`);
         codeNumbers.forEach((codeNumber) => {
             logOne({

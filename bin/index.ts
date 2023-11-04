@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { CommandLineOptions } from "command-line-args";
-import { Operation, getConfig, handleArgs } from "../src/config";
+import { Operation, getOperation, validateArgs } from "../src/config";
 import {
     getAllCodes,
     logOne,
@@ -14,9 +14,9 @@ import getOpts from "../src/opts";
 function main() {
     const opts: CommandLineOptions = getOpts();
 
-    handleArgs(opts.args);
+    validateArgs(opts.args);
 
-    const operation: Operation = getConfig(opts.args);
+    const operation: Operation = getOperation(opts.args);
 
     switch (operation) {
         case Operation.printAll:

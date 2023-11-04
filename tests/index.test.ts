@@ -1,4 +1,4 @@
-import { Operation, getConfig } from "../src/config";
+import { Operation, getOperation } from "../src/config";
 import { getAllCodes, selectGroup, selectOne } from "../src/methods";
 import fs from "fs";
 import path from "path";
@@ -58,13 +58,13 @@ test("should get specific grouop", () => {
 });
 
 test("should return correct Operation", () => {
-    const operation = getConfig([]);
+    const operation = getOperation([]);
     expect(operation).toEqual(Operation.printAll);
 
-    const operation2 = getConfig(["1"]);
+    const operation2 = getOperation(["1"]);
     expect(operation2).toEqual(Operation.PrintGroup);
 
-    const operation3 = getConfig(["100"]);
+    const operation3 = getOperation(["100"]);
     expect(operation3).toEqual(Operation.PrintOne);
 });
 
