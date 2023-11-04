@@ -1,0 +1,260 @@
+{
+    "1xx Informational": {
+        "100": {
+            "description": "Continue",
+            "details": "The initial part of the request has been received and the client should continue with the request."
+        },
+        "101": {
+            "description": "Switching Protocols",
+            "details": "The server is changing protocols and the client should switch to a new protocol."
+        },
+        "102": {
+            "description": "Processing",
+            "details": "The server is processing the request, but the client should continue to wait."
+        },
+        "103": {
+            "description": "Early Hints",
+            "details": "This status code indicates to the client that the server is likely to send a 2xx response."
+        }
+    },
+    "2xx Success": {
+        "200": {
+            "description": "OK",
+            "details": "The request was successful, and the server has returned the requested data."
+        },
+        "201": {
+            "description": "Created",
+            "details": "A new resource has been successfully created as a result of the request."
+        },
+        "202": {
+            "description": "Accepted",
+            "details": "The request has been accepted for processing, but the processing has not been completed."
+        },
+        "203": {
+            "description": "Non-Authoritative Information",
+            "details": "The server is a transforming proxy and received a 200 OK response from the origin server."
+        },
+        "204": {
+            "description": "No Content",
+            "details": "The server has successfully fulfilled the request, but there is no new information to send back."
+        },
+        "205": {
+            "description": "Reset Content",
+            "details": "The server has fulfilled the request, and the user agent should reset the document view."
+        },
+        "206": {
+            "description": "Partial Content",
+            "details": "The server has fulfilled a partial GET request for the resource."
+        },
+        "207": {
+            "description": "Multi-Status",
+            "details": "The message body contains a representation that describes multiple status codes for multiple independent operations."
+        },
+        "208": {
+            "description": "Already Reported",
+            "details": "The members of a DAV binding have already been enumerated in a previous reply to this request, and are not being included again."
+        },
+        "226": {
+            "description": "IM Used",
+            "details": "The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance."
+        }
+    },
+    "3xx Redirection": {
+        "300": {
+            "description": "Multiple Choices",
+            "details": "The request has multiple possible responses, and the user should select one."
+        },
+        "301": {
+            "description": "Moved Permanently",
+            "details": "The resource has been permanently moved to a different URL."
+        },
+        "302": {
+            "description": "Found",
+            "details": "The resource has been found, but it's temporarily located at a different URL."
+        },
+        "303": {
+            "description": "See Other",
+            "details": "The response to the request can be found under a different URI."
+        },
+        "304": {
+            "description": "Not Modified",
+            "details": "The resource has not been modified since the last requested time."
+        },
+        "305": {
+            "description": "Use Proxy",
+            "details": "The requested resource must be accessed through the proxy given by the Location field."
+        },
+        "307": {
+            "description": "Temporary Redirect",
+            "details": "The request should be repeated with another URI, but future requests can still use the original URI."
+        },
+        "308": {
+            "description": "Permanent Redirect",
+            "details": "The request and all future requests should be repeated using another URI."
+        }
+    },
+    "4xx Client Error": {
+        "400": {
+            "description": "Bad Request",
+            "details": "The request could not be understood or was missing required parameters."
+        },
+        "401": {
+            "description": "Unauthorized",
+            "details": "Authentication is required, and the user has not provided valid credentials."
+        },
+        "402": {
+            "description": "Payment Required",
+            "details": "Reserved for future use. It's not commonly used."
+        },
+        "403": {
+            "description": "Forbidden",
+            "details": "The server understood the request, but it refuses to fulfill it."
+        },
+        "404": {
+            "description": "Not Found",
+            "details": "The requested resource could not be found on the server."
+        },
+        "405": {
+            "description": "Method Not Allowed",
+            "details": "The method specified in the request is not allowed for the resource."
+        },
+        "406": {
+            "description": "Not Acceptable",
+            "details": "The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request."
+        },
+        "407": {
+            "description": "Proxy Authentication Required",
+            "details": "The client must first authenticate itself with the proxy."
+        },
+        "408": {
+            "description": "Request Timeout",
+            "details": "The server timed out waiting for the request."
+        },
+        "409": {
+            "description": "Conflict",
+            "details": "The request could not be completed due to a conflict with the current state of the target resource."
+        },
+        "410": {
+            "description": "Gone",
+            "details": "The requested resource is no longer available at the server and no forwarding address is known."
+        },
+        "411": {
+            "description": "Length Required",
+            "details": "The server refuses to accept the request without a defined Content-Length."
+        },
+        "412": {
+            "description": "Precondition Failed",
+            "details": "The precondition given in the request evaluated to false by the server."
+        },
+        "413": {
+            "description": "Payload Too Large",
+            "details": "The request is larger than the server is willing or able to process."
+        },
+        "414": {
+            "description": "URI Too Long",
+            "details": "The URI requested by the client is longer than the server is willing to interpret."
+        },
+        "415": {
+            "description": "Unsupported Media Type",
+            "details": "The request entity has a media type which the server is not capable of producing."
+        },
+        "416": {
+            "description": "Range Not Satisfiable",
+            "details": "The client has asked for a portion of the file, but the server cannot supply that portion."
+        },
+        "417": {
+            "description": "Expectation Failed",
+            "details": "The server cannot meet the requirements of the Expect request-header field."
+        },
+        "418": {
+            "description": "I'm a Teapot",
+            "details": "The server refuses the attempt to brew coffee with a teapot."
+        },
+        "421": {
+            "description": "Misdirected Request",
+            "details": "The request was directed at a server that is not able to produce a response."
+        },
+        "422": {
+            "description": "Unprocessable Entity",
+            "details": "The request was well-formed but was unable to be followed due to semantic errors."
+        },
+        "423": {
+            "description": "Locked",
+            "details": "The resource that is being accessed is locked."
+        },
+        "424": {
+            "description": "Failed Dependency",
+            "details": "The request failed due to failure of a previous request."
+        },
+        "425": {
+            "description": "Too Early",
+            "details": "The server is unwilling to risk processing a request that might be replayed."
+        },
+        "426": {
+            "description": "Upgrade Required",
+            "details": "The client should switch to a different protocol."
+        },
+        "428": {
+            "description": "Precondition Required",
+            "details": "The origin server requires the request to be conditional."
+        },
+        "429": {
+            "description": "Too Many Requests",
+            "details": "The user has sent too many requests in a given amount of time."
+        },
+        "431": {
+            "description": "Request Header Fields Too Large",
+            "details": "The server is unwilling to process the request because its header fields are too large."
+        },
+        "451": {
+            "description": "Unavailable For Legal Reasons",
+            "details": "The user agent requested a resource that cannot legally be provided, such as a web page censored by a government."
+        }
+    },
+    "5xx Server Error": {
+        "500": {
+            "description": "Internal Server Error",
+            "details": "The server encountered an unexpected condition that prevented it from fulfilling the request."
+        },
+        "501": {
+            "description": "Not Implemented",
+            "details": "The server does not support the functionality required to fulfill the request."
+        },
+        "502": {
+            "description": "Bad Gateway",
+            "details": "The server received an invalid response from an upstream server while trying to fulfill the request."
+        },
+        "503": {
+            "description": "Service Unavailable",
+            "details": "The server is currently unable to handle the request due to temporary overloading or maintenance of the server."
+        },
+        "504": {
+            "description": "Gateway Timeout",
+            "details": "The server did not receive a timely response from an upstream server or proxy."
+        },
+        "505": {
+            "description": "HTTP Version Not Supported",
+            "details": "The server does not support the HTTP protocol version used in the request."
+        },
+        "506": {
+            "description": "Variant Also Negotiates",
+            "details": "Transparent content negotiation for the request results in a circular reference."
+        },
+        "507": {
+            "description": "Insufficient Storage",
+            "details": "The server is unable to store the representation needed to complete the request."
+        },
+        "508": {
+            "description": "Loop Detected",
+            "details": "The server detected an infinite loop while processing the request."
+        },
+        "510": {
+            "description": "Not Extended",
+            "details": "Further extensions to the request are required for the server to fulfill it."
+        },
+        "511": {
+            "description": "Network Authentication Required",
+            "details": "The client needs to authenticate to gain network access."
+        }
+    }
+}
