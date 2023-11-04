@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_1 = require("../config");
-const methods_1 = require("../methods");
+const config_1 = require("../src/config");
+const methods_1 = require("../src/methods");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const testData = JSON.parse(fs_1.default.readFileSync(path_1.default.join(__dirname, "../status_codes.json"), "utf8"));

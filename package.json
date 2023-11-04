@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "bin": {
-    "status": "./dist/bin/status.js"
+    "status": "./dist/bin/index.js"
   },
   "keywords": [],
   "author": "",

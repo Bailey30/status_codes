@@ -7,7 +7,7 @@ exports.logOne = exports.logResults = exports.selectOne = exports.selectGroup = 
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 function getAllCodes() {
-    const file_contents = fs_1.default.readFileSync(path_1.default.join(__dirname, "status_codes.json"), "utf8");
+    const file_contents = fs_1.default.readFileSync(path_1.default.join(__dirname, "../status_codes.json"), "utf8");
     return JSON.parse(file_contents.toString());
 }
 exports.getAllCodes = getAllCodes;

@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 import { CommandLineOptions } from "command-line-args";
-import { Operation, getConfig, handleArgs } from "../config";
+import { Operation, getConfig, handleArgs } from "../src/config";
 import {
     getAllCodes,
     logOne,
     logResults,
     selectGroup,
     selectOne,
-} from "../methods";
-import getOpts from "../opts";
+} from "../src/methods";
+import getOpts from "../src/opts";
 
 function main() {
     const opts: CommandLineOptions = getOpts();

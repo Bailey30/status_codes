@@ -1,5 +1,5 @@
-import { Operation, getConfig } from "../config";
-import { getAllCodes, getAllGroups, selectGroup, selectOne } from "../methods";
+import { Operation, getConfig } from "../src/config";
+import { getAllCodes, selectGroup, selectOne } from "../src/methods";
 import fs from "fs";
 import path from "path";
 
