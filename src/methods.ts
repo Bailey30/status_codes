@@ -19,7 +19,6 @@ export function selectGroup(
     Object.entries(allCodes).forEach(
         ([key, value]: [string, CodesWithInfo]) => {
             // key[0] is the first character
-
             // id[0] is the first character of the args
             if (key[0] === id[0] || id === "all") {
                 groups.push({
